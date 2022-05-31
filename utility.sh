@@ -23,8 +23,9 @@ do
     elif [[ $command == 'status'  ]]; then
         echo -n "Enter pid or name (default pid):"
         read name
+        ps aux > process.txt
         if [[ $name == 'name' ]]; then
-            awk -v var=$(namm)
+            awk '{print $0}' process.txt
+        fi
     fi
-
 done
